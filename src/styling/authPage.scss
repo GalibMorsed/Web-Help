@@ -1,0 +1,264 @@
+//sigin page
+$primary-color: #6a0dad;
+$secondary-color: #b4cefb;
+$background-color: rgb(234, 224, 244);
+$border-radius: 1rem;
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $secondary-color;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.signup-box {
+  width: 47rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: $border-radius;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+
+  .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.form-container {
+  display: flex;
+  gap: 5.5rem;
+  width: 100%;
+
+  .form-left,
+  .form-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 0.8rem;
+  width: 100%;
+}
+
+.input,
+.input-file {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.upload-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button {
+  width: 50%;
+  background-color: $primary-color;
+  color: white;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+  margin: 1.5rem auto 0 auto;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.already-account {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-box {
+    width: 90%;
+  }
+  .input {
+    width: 90%;
+  }
+  .form-container {
+    flex-direction: column;
+  }
+  .upload-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 549px) {
+  .signup-box {
+    width: 20rem;
+    padding: 1.5rem;
+  }
+  .input {
+    width: 85%;
+  }
+  .button {
+    width: 60%;
+  }
+}
+
+
+//login page
+$primary-color: #6a0dad;
+$secondary-color: #b4cefb;
+$background-color: rgb(234, 224, 244);
+$border-radius: 1rem;
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $secondary-color;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.login-box {
+  width: 23rem;
+  height: 28rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: $border-radius;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    margin-right: 1.2rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 0.8rem;
+  width: 68%;
+}
+
+.input {
+  width: 90%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.forgot-password {
+  width: 68%;
+  text-align: left;
+  font-size: 0.9rem;
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 0.8rem;
+  margin-top: -0.5rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.button {
+  width: 40%;
+  background-color: $primary-color;
+  color: white;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+  margin-left: 6rem;
+  margin-top: 2rem;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.create-account {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  margin-right: 3rem;
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 549px) {
+  .login-box {
+    width: 17rem;
+    height: 26rem;
+    padding: 2rem;
+  }
+  .button {
+    margin-left: 4rem;
+    margin-top: 1rem;
+  }
+}

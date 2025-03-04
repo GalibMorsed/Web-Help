@@ -1,0 +1,55 @@
+.about-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .about-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  
+    h1 {
+      color: #333;
+      font-size: 2rem;
+    }
+  
+    p {
+      color: #666;
+      font-size: 1rem;
+    }
+  }
+  
+  .contact-us {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+  
+    h2 {
+      color: #333;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      color: #555;
+      font-size: 1.1rem;
+      margin: 8px 0;
+  
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  

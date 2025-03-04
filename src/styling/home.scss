@@ -1,0 +1,136 @@
+/* Dark Theme */
+body {
+    background-color: #18191a;
+    color: #e4e6eb;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #242526;
+    color: white;
+  
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+  
+    .nav-links {
+      display: flex;
+      gap: 15px;
+  
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 8px 12px;
+        border-radius: 5px;
+  
+        &:hover {
+          background: #3a3b3c;
+        }
+      }
+    }
+  
+    .coin-section {
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 15px;
+    }
+  
+    .search-bar {
+      width: 150px;
+      margin: 0 10px;
+      padding: 6px;
+      border: none;
+      border-radius: 5px;
+      background: #3a3b3c;
+      color: white;
+    }
+  
+    .hamburger-menu {
+      position: relative;
+      display: inline-block;
+  
+      .hamburger {
+        background: #ff4500;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+  
+      .menu-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background: #242526;
+        min-width: 150px;
+        border-radius: 5px;
+        padding: 10px;
+  
+        a {
+          display: block;
+          color: white;
+          padding: 8px;
+          text-decoration: none;
+  
+          &:hover {
+            background: #3a3b3c;
+          }
+        }
+      }
+  
+      &:hover .menu-content {
+        display: block;
+      }
+    }
+  }
+  
+  /* Feed Section */
+  .feed {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  
+    .post {
+      background: #242526;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+  
+      .post-user {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+  
+        .user-pic {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+      }
+  
+      .post-img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+  
+      .caption {
+        font-size: 16px;
+      }
+    }
+  }
+
+  
