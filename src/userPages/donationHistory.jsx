@@ -49,18 +49,14 @@ const DonationHistory = () => {
 
   return (
     <div>
-      <header className="navbar">
+      <header className="donation-navbar">
         <Link to="/">
           <h2 className="logo">Web-Help</h2>
         </Link>
         <div className="nav-right">
           <div className="coin-section">💰 Coins: {coinCount}</div>
           <button className="search-icon">🔍</button>
-          <img
-            src="../../public/userImg.avif"
-            alt="User"
-            className="nav-user-pic"
-          />
+          <img src="/userImg.avif" alt="User" className="nav-user-pic" />
         </div>
         <div className="hamburger-menu">
           <button className="hamburger">☰</button>
@@ -68,7 +64,6 @@ const DonationHistory = () => {
             <Link to="/UserPage">Profile</Link>
             <Link to="/">Community</Link>
             <Link to="/CoinHistory">Coin History</Link>
-            <Link to="/LoginForm">Logout</Link>
           </div>
         </div>
       </header>

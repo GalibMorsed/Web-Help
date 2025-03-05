@@ -14,7 +14,7 @@ body {
   padding: 0;
 }
 
-.navbar {
+.main-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +28,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.nav-right {
+.main-nav-right {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -100,7 +100,7 @@ body {
     border-radius: $border-radius;
     padding: 10px;
 
-    a {
+    Link {
       display: block;
       color: white;
       padding: 8px;
@@ -117,7 +117,7 @@ body {
   }
 }
 
-.container {
+.main-container {
   width: 80%;
   max-width: 1000px;
   margin: auto;
@@ -176,7 +176,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .nav-right {
+  .main-nav-right {
     display: none;
   }
 

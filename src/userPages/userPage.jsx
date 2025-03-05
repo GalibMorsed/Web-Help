@@ -29,7 +29,7 @@ const UserPage = () => {
 
   return (
     <div>
-      <header className="navbar">
+      <header className="user-navbar">
         <Link to="/">
           <h2 className="logo">Web-Help</h2>
         </Link>
@@ -40,13 +40,13 @@ const UserPage = () => {
             <Link to="/">Community</Link>
             <Link to="/CoinHistory">Coin History</Link>
             <Link to="/DonationPage">Donation</Link>
-            <Link to="/LogoutForm">Logout</Link>
+            <Link to="/LoginForm">Logout</Link>
           </div>
         </div>
       </header>
 
-      <div className="container">
-        <main className="profile">
+      <div className="user-container">
+        <main className="user-profile">
           <img
             src="../../public/userimg.avif"
             alt="Cover Photo"
@@ -82,8 +82,8 @@ const UserPage = () => {
           </div>
         </main>
 
-        <div className="feed">
-          <div className="post">
+        <div className="user-feed">
+          <div className="user-post">
             <h3>John Doe</h3>
             <p>Had a great day today! #blessed</p>
             <img
@@ -94,7 +94,7 @@ const UserPage = () => {
             <button className="upvote">🔼 10</button>
             <button className="share-btn">🔗 Share</button>
           </div>
-          <div className="post">
+          <div className="user-post">
             <h3>John Doe</h3>
             <p>Loving the new update on this platform! 🚀</p>
             <img

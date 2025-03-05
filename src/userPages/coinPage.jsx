@@ -36,7 +36,7 @@ const CoinHistory = () => {
 
   return (
     <div>
-      <header className="navbar">
+      <header className="coin-navbar">
         <Link to="/">
           <h2 className="logo">Web-Help</h2>
         </Link>
@@ -55,7 +55,6 @@ const CoinHistory = () => {
             <Link to="/UserPage">Profile</Link>
             <Link to="/">Community</Link>
             <Link to="/DonationPage">Donation</Link>
-            <Link to="LogoutForm">Logout</Link>
           </div>
         </div>
       </header>

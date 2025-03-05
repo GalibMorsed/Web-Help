@@ -7,16 +7,16 @@ const MainPage = () => {
     {
       id: 1,
       user: "User 1",
-      userPic: "../../public/userImg.avif",
-      postImg: "../../public/postImg.jpg",
+      userPic: "/userImg.avif",
+      postImg: "/postImg.jpg",
       caption: "Had an amazing time at the beach today! 🌊",
       upvotes: 10,
     },
     {
       id: 2,
       user: "User 2",
-      userPic: "../../public/userImg.avif",
-      postImg: "../../public/postImg.jpg",
+      userPic: "/userImg.avif",
+      postImg: "/postImg.jpg",
       caption: "New coding setup! What do you think? 💻",
       upvotes: 25,
     },
@@ -24,15 +24,11 @@ const MainPage = () => {
 
   return (
     <div>
-      <header className="navbar">
+      <header className="main-navbar">
         <h2 className="logo">Web-Help</h2>
-        <div className="nav-right">
+        <div className="main-nav-right">
           <div className="coin-section">💰 Coins: {coinCount}</div>
-          <img
-            src="../../public/userImg.avif"
-            alt="User"
-            className="nav-user-pic"
-          />
+          <img src="/userImg.avif" alt="User" className="nav-user-pic" />
         </div>
         <div className="hamburger-menu">
           <Link to={"/SearchPage"}>
@@ -47,7 +43,7 @@ const MainPage = () => {
           </div>
         </div>
       </header>
-      <div className="container">
+      <div className="main-container">
         <main className="feed">
           {posts.map((post) => (
             <div className="post" key={post.id}>
