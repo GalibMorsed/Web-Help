@@ -10,7 +10,8 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 
 // Store API key in .env (DO NOT expose in frontend!)
-const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+const API_KEY =
+  "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";
 // System message to define ChatGPT's behavior
 const systemMessage = {
   role: "system",
