@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HelpPage = () => {
   return (
@@ -18,7 +19,9 @@ const HelpPage = () => {
           Learn how AI features enhance your experience and how to interact with
           AI-powered tools.
         </p>
-        <button className="chat-button">Chat</button>
+        <Link to={"/AiPage"}>
+          <button className="chat-button">Chat</button>
+        </Link>
       </section>
       <section>
         <h2>Contact Support</h2>

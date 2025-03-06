@@ -121,7 +121,8 @@ body {
   width: 80%;
   max-width: 1000px;
   margin: auto;
-  padding-top: 80px;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
 .feed {
@@ -164,7 +165,19 @@ body {
 .nav-user-pic-responsive {
   display: none;
 }
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background: #bbbbbb51;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  font-weight: bold;
 
+  Link {
+    text-decoration: none;
+    color: white;
+  }
+}
 @media (max-width: 800px) {
   .container {
     width: 90%;

@@ -94,9 +94,6 @@ const SearchPage = () => {
           ))}
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="footer">Footer</footer>
     </div>
   );
 };

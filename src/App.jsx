@@ -12,6 +12,7 @@ import CreatePost from "./userPages/createPost";
 import SearchPage from "./homeComponents/searchPage";
 import AboutUs from "./homeComponents/about";
 import HelpPage from "./homeComponents/help";
+import AiPage from "./authPages/aiPage";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           <Route path="/DonationPage" element={<DonationHistory />} />
           <Route path="/CreatePost" element={<CreatePost />} />
           <Route path="/SearchPage" element={<SearchPage />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/HelpPage" element={<HelpPage />} />
+          <Route path="/AiPage" element={<AiPage />} />
         </Routes>
       </div>
     </Router>

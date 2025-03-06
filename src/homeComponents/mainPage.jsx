@@ -61,6 +61,12 @@ const MainPage = () => {
           ))}
         </main>
       </div>
+
+      {/* Footer */}
+      <footer className="footer">
+        <Link to={"/AboutUs"}>About Us</Link>
+        <Link to={"/HelpPage"}>Help</Link>
+      </footer>
     </div>
   );
 };
