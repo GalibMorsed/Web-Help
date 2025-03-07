@@ -42,12 +42,6 @@ const CoinHistory = () => {
         </Link>
         <div className="nav-right">
           <div className="coin-section">💰 Coins: {coinCount}</div>
-          <button className="search-icon">🔍</button>
-          <img
-            src="../../public/userImg.avif"
-            alt="User"
-            className="nav-user-pic"
-          />
         </div>
         <div className="hamburger-menu">
           <button className="hamburger">☰</button>
@@ -58,7 +52,7 @@ const CoinHistory = () => {
           </div>
         </div>
       </header>
-      <div className="container">
+      <div className="coin-container">
         <main className="coin-history">
           <h2>Coin Purchase History</h2>
           <table className="history-table">

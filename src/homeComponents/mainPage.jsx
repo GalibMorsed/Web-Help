@@ -1,8 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const MainPage = () => {
-  const [coinCount, setCoinCount] = useState(100);
+  const [coinCount, setCoinCount] = useState(1000);
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    const hideTime = localStorage.getItem("hideMessageUntil");
+    if (!hideTime || new Date().getTime() > hideTime) {
+      setShowMessage(true);
+    }
+  }, []);
+
+  const handleClose = () => {
+    const oneHourLater = new Date().getTime() + 60 * 60 * 1000;
+    localStorage.setItem("hideMessageUntil", oneHourLater);
+    setShowMessage(false);
+  };
+
   const posts = [
     {
       id: 1,
@@ -25,7 +40,7 @@ const MainPage = () => {
   return (
     <div>
       <header className="main-navbar">
-        <h2 className="logo">Web-Help</h2>
+        <h2 className="main-logo">Web-Help</h2>
         <div className="main-nav-right">
           <div className="coin-section">💰 Coins: {coinCount}</div>
           <img src="/userImg.avif" alt="User" className="nav-user-pic" />
@@ -43,6 +58,17 @@ const MainPage = () => {
           </div>
         </div>
       </header>
+
+      {showMessage && (
+        <div className="message-box">
+          <p>Buy your coins now and start donating today</p>
+          <Link to={"/paymentPage"}>
+            <button>Okay</button>
+          </Link>
+          <button onClick={handleClose}>Close</button>
+        </div>
+      )}
+
       <div className="main-container">
         <main className="feed">
           {posts.map((post) => (
@@ -62,10 +88,9 @@ const MainPage = () => {
         </main>
       </div>
 
-      {/* Footer */}
       <footer className="footer">
-        <Link to={"/AboutUs"}>About Us</Link>
-        <Link to={"/HelpPage"}>Help</Link>
+        <Link to="/AboutUs">About Us</Link>
+        <Link to="/HelpPage">Help</Link>
       </footer>
     </div>
   );

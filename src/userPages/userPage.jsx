@@ -76,7 +76,7 @@ const UserPage = () => {
                 Edit Profile
               </button>
               <Link to={"/CreatePost"}>
-                <button className="create-post">Create Post</button>
+                <button className="create-post-btn">Create Post</button>
               </Link>
             </div>
           </div>

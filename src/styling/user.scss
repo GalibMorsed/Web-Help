@@ -25,12 +25,6 @@ body {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   text-decoration: none;
-
-  h2 {
-    margin: 0;
-    font-size: 22px;
-    font-weight: bold;
-  }
 }
 
 .hamburger-menu {
@@ -201,7 +195,7 @@ body {
   margin-top: 10px;
 
   .edit-profile,
-  .create-post {
+  .create-post-btn {
     background: $primary-color;
     color: white;
     border: none;

@@ -41,6 +41,12 @@ p {
   font-size: 1.2rem;
   text-align: justify;
 }
+.logo {
+  color: white;
+  &:hover {
+    color: #b5d1fd;
+  }
+}
 @import url(authPage.scss);
 @import url(home.scss);
 @import url(user.scss);
@@ -52,3 +58,4 @@ p {
 @import url(post.scss);
 @import url(search.scss);
 @import url(aiPage.scss);
+@import url(payment.scss);

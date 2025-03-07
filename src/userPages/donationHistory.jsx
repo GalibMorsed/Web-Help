@@ -55,8 +55,6 @@ const DonationHistory = () => {
         </Link>
         <div className="nav-right">
           <div className="coin-section">💰 Coins: {coinCount}</div>
-          <button className="search-icon">🔍</button>
-          <img src="/userImg.avif" alt="User" className="nav-user-pic" />
         </div>
         <div className="hamburger-menu">
           <button className="hamburger">☰</button>
@@ -67,7 +65,7 @@ const DonationHistory = () => {
           </div>
         </div>
       </header>
-      <div className="container">
+      <div className="donation-container">
         <main className="donation-history">
           <h2>Donation History</h2>
           <div className="total-funds">
