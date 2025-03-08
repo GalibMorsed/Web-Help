@@ -19,12 +19,12 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: $secondary-color;
-  padding: 8px 20px;
+  padding: 15px 20px;
   color: white;
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   left: 50%;
   transform: translateX(-50%);
@@ -50,8 +50,6 @@ body {
   color: white;
   font-size: 20px;
   cursor: pointer;
-  padding-right: 10vh;
-
   &:hover {
     color: $primary-color;
   }
@@ -109,7 +107,7 @@ body {
 
 .footer {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   left: 50%;
   transform: translateX(-50%);

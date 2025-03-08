@@ -48,7 +48,7 @@ const UserPage = () => {
       <div className="user-container">
         <main className="user-profile">
           <img
-            src="../../public/userimg.avif"
+            src="../../public/postImg2.png"
             alt="Cover Photo"
             className="cover-photo"
           />
@@ -87,7 +87,7 @@ const UserPage = () => {
             <h3>John Doe</h3>
             <p>Had a great day today! #blessed</p>
             <img
-              src="../../public/postImg.jpg"
+              src="/public/postImg.jpg"
               alt="Post Image"
               className="post-image"
             />
@@ -98,7 +98,7 @@ const UserPage = () => {
             <h3>John Doe</h3>
             <p>Loving the new update on this platform! 🚀</p>
             <img
-              src="../../public/PostImg.jpg"
+              src="/public/PostImg.jpg"
               alt="Post Image"
               className="post-image"
             />
@@ -111,9 +111,9 @@ const UserPage = () => {
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close" onClick={closeEditForm}>
+            <button className="close" onClick={closeEditForm}>
               &times;
-            </span>
+            </button>
             <h2>Edit Profile</h2>
             <label>Name:</label>
             <input
@@ -154,7 +154,9 @@ const UserPage = () => {
                 setEditProfile({ ...editProfile, bio: e.target.value })
               }
             />
-            <button onClick={saveProfile}>Save</button>
+            <button className="save" onClick={saveProfile}>
+              Save
+            </button>
           </div>
         </div>
       )}

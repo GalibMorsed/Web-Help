@@ -43,12 +43,14 @@ const MainPage = () => {
         <h2 className="main-logo">Web-Help</h2>
         <div className="main-nav-right">
           <div className="coin-section">💰 Coins: {coinCount}</div>
-          <img src="/userImg.avif" alt="User" className="nav-user-pic" />
-        </div>
-        <div className="hamburger-menu">
-          <Link to={"/SearchPage"}>
-            <button className="search-icon">🔍</button>
+          <Link to={"/UserPage"}>
+            <img src="/userImg.avif" alt="User" className="nav-user-pic" />
           </Link>
+        </div>{" "}
+        <Link to={"/SearchPage"}>
+          <button className="search-icon">🔍</button>
+        </Link>
+        <div className="hamburger-menu">
           <button className="hamburger">☰</button>
           <div className="menu-content">
             <Link to="/UserPage">Profile</Link>
