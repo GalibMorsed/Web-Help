@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const MainPage = () => {
-  const [coinCount, setCoinCount] = useState(1000);
+  const [coinCount, setCoinCount] = useState(100);
   const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
@@ -13,12 +13,20 @@ const MainPage = () => {
   }, []);
 
   const handleClose = () => {
-    const oneHourLater = new Date().getTime() + 60 * 60 * 1000;
-    localStorage.setItem("hideMessageUntil", oneHourLater);
+    const twoMinutesLater = new Date().getTime() + 2 * 60 * 1000;
+    localStorage.setItem("hideMessageUntil", twoMinutesLater);
     setShowMessage(false);
   };
 
   const posts = [
+    {
+      id: 1,
+      user: "User 1",
+      userPic: "/userImg.avif",
+      postImg: "/postImg.jpg",
+      caption: "Had an amazing time at the beach today! 🌊",
+      upvotes: 10,
+    },
     {
       id: 1,
       user: "User 1",
@@ -34,6 +42,7 @@ const MainPage = () => {
       postImg: "/postImg.jpg",
       caption: "New coding setup! What do you think? 💻",
       upvotes: 25,
+      donate: true, // Add donate property to this post
     },
   ];
 
@@ -84,6 +93,9 @@ const MainPage = () => {
               <div className="post-actions">
                 <button className="upvote">🔼 {post.upvotes}</button>
                 <button className="share-btn">🔗 Share</button>
+                {post.donate && (
+                  <button className="donate-btn">💸 Donate</button>
+                )}
               </div>
             </div>
           ))}

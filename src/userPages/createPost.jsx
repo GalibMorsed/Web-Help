@@ -1,16 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 export default function CreatePost() {
   const [postText, setPostText] = useState("");
   const [location, setLocation] = useState("");
-  const [locality, setLocality] = useState(""); 
-  const [images, setImages] = useState([]); 
+  const [locality, setLocality] = useState("");
+  const [images, setImages] = useState([]);
   const [donationEnabled, setDonationEnabled] = useState(false);
   const [donorName, setDonorName] = useState("");
   const [donationAmount, setDonationAmount] = useState("");
   const [donationProof, setDonationProof] = useState(null);
 
-  const locations = ["Belagavi", "Bengaluru", "Gulbarga", "Mysore"]; 
+  const navigate = useNavigate(); // Initialize navigate function
+
+  const locations = ["Belagavi", "Bengaluru", "Gulbarga", "Mysore"];
   const localities = {
     Belagavi: [
       "Athani",
@@ -22,66 +25,9 @@ export default function CreatePost() {
       "Ramdurg",
       "Raydag",
     ],
-    Bengaluru: [
-      "EletronicCity",
-      "SarjapurRoad",
-      "WhiteField",
-      "Devanahalli",
-      "Inderanagar",
-      "Jayanagar",
-      "Koramangala",
-      "HRSLayout",
-      "BannerghattaRoad",
-      "CentralBusinessDistrict(CBD)",
-      "RajajiNagar",
-      "Malleswaram",
-      "FrazerTown",
-      "CookeTwon",
-      "BTMLayout",
-      "Ulsoor",
-      "AshokNagar",
-      "VijayaNagar",
-      "JPNagar",
-      "Yelahanka",
-      "KRPuram",
-      "HosurRoad",
-      "Yeshwanthpur",
-      "Kengari",
-      "Mahadevapura",
-      "GandhiNagar",
-      "Bennghalli",
-      "Hoodi",
-      "Majestic",
-      "NandiniLayout",
-      "Kempegowda",
-      "Kadugodi",
-      "Battarahalli",
-      "VictoriaLayout",
-      "Hennur",
-      "Hoskote",
-      "OldMadrasRoad",
-      "LalBaghRoad",
-      "MGRoad",
-    ],
-
-    Gulbarga: [
-      "Aland",
-      "Afzalpur",
-      "Chinchioli",
-      "Chitapur",
-      "Jevargi",
-      "Kalgi",
-      "Sedem",
-    ],
-    Mysore: [
-      "Mandya",
-      "Kodagu",
-      "Chamarajanagar",
-      "Hassan",
-      "Chikkamagaluru",
-      "DikshinaKannada",
-      "Udupi",
-    ],
+    Bengaluru: ["ElectronicCity", "SarjapurRoad", "WhiteField", "Devanahalli"],
+    Gulbarga: ["Aland", "Afzalpur", "Chinchioli", "Chitapur"],
+    Mysore: ["Mandya", "Kodagu", "Chamarajanagar"],
   };
 
   const handleImageChange = (e) => {
@@ -122,7 +68,10 @@ export default function CreatePost() {
     images.forEach(({ preview }) => URL.revokeObjectURL(preview));
     if (donationProof) URL.revokeObjectURL(donationProof);
 
-    // Handle form submission logic (e.g., API call)
+    // Redirect user to UserPage after 5 seconds
+    setTimeout(() => {
+      navigate("/UserPage");
+    }, 2000);
   };
 
   return (
@@ -137,7 +86,6 @@ export default function CreatePost() {
         onChange={(e) => setPostText(e.target.value)}
       />
 
-      {/* Location Selection */}
       <select
         className="location-dropdown"
         value={location}
@@ -154,7 +102,6 @@ export default function CreatePost() {
         ))}
       </select>
 
-      {/* Locality Selection (only show when location is selected) */}
       {location && (
         <select
           className="locality-dropdown"
@@ -170,7 +117,6 @@ export default function CreatePost() {
         </select>
       )}
 
-      {/* Image Upload */}
       <label className="file-label">
         Upload Images:
         <input
@@ -182,7 +128,6 @@ export default function CreatePost() {
         />
       </label>
 
-      {/* Image Preview */}
       <div className="image-preview-container">
         {images.map((img, index) => (
           <div key={index} className="image-preview">
@@ -197,7 +142,6 @@ export default function CreatePost() {
         ))}
       </div>
 
-      {/* Donation Toggle */}
       <div className="donation-toggle">
         <button
           onClick={() => setDonationEnabled(!donationEnabled)}
@@ -207,7 +151,6 @@ export default function CreatePost() {
         </button>
       </div>
 
-      {/* Donation Fields (Only show when donation is enabled) */}
       {donationEnabled && (
         <div className="donation-fields">
           <input

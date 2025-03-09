@@ -9,7 +9,7 @@
     align-items: center;
     width: 95%;
     padding: 15px;
-    background: #bbbbbb51;
+    background: #00000034;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
     .home-icon {
@@ -33,12 +33,12 @@
         background: transparent;
         padding: 5px;
       }
-      .search-icon {
-        color: #007bff;
-        font-size: 1.2rem;
-        cursor: pointer;
-      }
     }
+  }
+  .search-icon-btn {
+    color: #007bff;
+    font-size: 1.2rem;
+    cursor: pointer;
   }
 
   .search-history,
@@ -59,7 +59,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      max-height: 30vh;
+      max-height: 26vh;
       overflow-y: auto;
       padding-right: 10px;
       .history-item,

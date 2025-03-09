@@ -14,12 +14,14 @@ import AboutUs from "./homeComponents/about";
 import HelpPage from "./homeComponents/help";
 import AiPage from "./authPages/aiPage";
 import PaymentPage from "./homeComponents/paymentPage";
+import SettingPage from "./userPages/settingPage";
 
 function App() {
   return (
     <Router>
       <div className="container">
         <Routes>
+          <Route path="/SettingPage" element={<SettingPage />} />
           <Route path="/PaymentPage" element={<PaymentPage />} />
           <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/SignUpForm" element={<SignUpForm />} />

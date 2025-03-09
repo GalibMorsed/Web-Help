@@ -59,10 +59,9 @@ const SearchPage = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          🔍
         </div>
 
-        <FaSearch className="search-icon" onClick={handleSearch} />
+        <FaSearch className="search-icon-btn" onClick={handleSearch} />
       </header>
 
       {/* Search History */}

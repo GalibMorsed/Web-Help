@@ -1,6 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+const UserFeed = ({ posts }) => {
+  return (
+    <div className="user-feed">
+      {posts.map((post, index) => (
+        <div className="user-post" key={index}>
+          <h3>{post.name}</h3>
+          <p>{post.content}</p>
+          <img src={post.image} alt="Post Image" className="post-image" />
+          <button className="upvote">🔼Votes {post.votes}</button>
+          <button className="share-btn">🔗{post.shares} Shares</button>
+          {index === 0 && <button className="donation">💹 Donations</button>}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const UserPage = () => {
   const [profile, setProfile] = useState({
     name: "John Doe",
@@ -27,6 +44,23 @@ const UserPage = () => {
     closeEditForm();
   };
 
+  const posts = [
+    {
+      name: "John Doe",
+      content: "Had a great day today! #blessed",
+      image: "/public/postImg.jpg",
+      votes: 10,
+      shares: 10,
+    },
+    {
+      name: "John Doe",
+      content: "Loving the new update on this platform! 🚀",
+      image: "/public/PostImg.jpg",
+      votes: 20,
+      shares: 5,
+    },
+  ];
+
   return (
     <div>
       <header className="user-navbar">
@@ -41,6 +75,7 @@ const UserPage = () => {
             <Link to="/CoinHistory">Coin History</Link>
             <Link to="/DonationPage">Donation</Link>
             <Link to="/LoginForm">Logout</Link>
+            <Link to={"/SettingPage"}>Settings</Link>
           </div>
         </div>
       </header>
@@ -82,30 +117,7 @@ const UserPage = () => {
           </div>
         </main>
 
-        <div className="user-feed">
-          <div className="user-post">
-            <h3>John Doe</h3>
-            <p>Had a great day today! #blessed</p>
-            <img
-              src="/public/postImg.jpg"
-              alt="Post Image"
-              className="post-image"
-            />
-            <button className="upvote">🔼 10</button>
-            <button className="share-btn">🔗 Share</button>
-          </div>
-          <div className="user-post">
-            <h3>John Doe</h3>
-            <p>Loving the new update on this platform! 🚀</p>
-            <img
-              src="/public/PostImg.jpg"
-              alt="Post Image"
-              className="post-image"
-            />
-            <button className="upvote">🔼 Up</button>
-            <button className="share-btn">🔗 Share</button>
-          </div>
-        </div>
+        <UserFeed posts={posts} />
       </div>
 
       {isModalOpen && (
