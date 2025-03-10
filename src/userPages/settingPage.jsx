@@ -41,7 +41,7 @@ const Settings = () => {
         <select value={language} onChange={(e) => setLanguage(e.target.value)}>
           <option value="English">English</option>
           <option value="Hindi">Hindi</option>
-          <option value="Kannada">kannada</option>
+          <option value="Kannada">Kannada</option>
         </select>
       </div>
 

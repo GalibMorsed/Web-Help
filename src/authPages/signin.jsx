@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/authContext";
+import { getFirestore, doc, setDoc } from "firebase/firestore"; // Import Firestore
 
 const Signup = () => {
+  const { signup } = useAuth();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,6 +15,8 @@ const Signup = () => {
     aadhar: "",
     aadharDoc: null,
   });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -21,26 +27,55 @@ const Signup = () => {
     setFormData({ ...formData, aadharDoc: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.repassword) {
-      alert("Passwords do not match!");
+      setError("Passwords do not match!");
       return;
     }
-    console.log("Form Data:", formData);
-    // Implement form submission logic
+
+    if (formData.password.length < 6) {
+      setError("Password should be at least 6 characters");
+      return;
+    }
+
+    try {
+      setError("");
+      setLoading(true);
+      const userCredential = await signup(formData.email, formData.password);
+      const user = userCredential.user;
+      // Store user data in Firestore
+      const db = getFirestore();
+      await setDoc(doc(db, "users", user.uid), {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        aadhar: formData.aadhar,
+        aadharDoc: formData.aadharDoc ? formData.aadharDoc.name : null,
+      });
+      navigate("/LoginForm"); // Redirect to login page
+    } catch (error) {
+      console.error("Error creating account:", error); // Log the error
+      setError("Failed to create an account");
+    }
+    setLoading(false);
   };
 
   return (
     <div className="container">
       <div className="box-container">
-        {/* Left Side - Community Section */}
         <div className="left-side">
           <h2>Join Us & Share Your Ideas</h2>
           <p>
-            Join our community and be a part of something great. Your thoughts,
-            ideas, and innovation can bring positive changes. Register today to
-            unlock opportunities and share your perspectives with the world.
+            Join our vibrant and ever-growing community, where innovation meets
+            opportunity! Your ideas, creativity, and unique perspectives have
+            the power to inspire change and drive progress. Connect with
+            forward-thinkers, collaborate on groundbreaking projects, and gain
+            access to exclusive opportunities that can propel your vision to new
+            heights. Whether you're an innovator, a dreamer, or a
+            problem-solver, your contributions matter. Don’t just stand on the
+            sidelines—be a part of something truly extraordinary. Register today
+            and start shaping the future!
           </p>
           <div className="image-container">
             <img src="../../public/postImg2.png" alt="Join Community" />
@@ -48,10 +83,10 @@ const Signup = () => {
           </div>
         </div>
 
-        {/* Right Side - Signup Form */}
         <div className="right-side">
           <div className="signup-box">
             <h2 className="title">Sign Up</h2>
+            {error && <p className="error-message">{error}</p>}
             <form className="form" onSubmit={handleSubmit}>
               <label htmlFor="name" className="label">
                 Full Name
@@ -143,12 +178,12 @@ const Signup = () => {
                 required
               />
 
-              <button type="submit" className="button">
+              <button type="submit" className="button" disabled={loading}>
                 Sign Up
               </button>
             </form>
             <p className="create-account">
-              Already have an account? <Link to={"/LoginForm"}>Login</Link>
+              Already have an account? <Link to="/LoginForm">Login</Link>
             </p>
           </div>
         </div>

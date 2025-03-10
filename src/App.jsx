@@ -2,6 +2,8 @@ import React from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import { AuthProvider } from "./contexts/authContext";
+
 import LoginForm from "./authPages/login";
 import SignUpForm from "./authPages/signin";
 import HomePage from "./sourcePages/homePage";
@@ -19,23 +21,25 @@ import SettingPage from "./userPages/settingPage";
 function App() {
   return (
     <Router>
-      <div className="container">
-        <Routes>
-          <Route path="/SettingPage" element={<SettingPage />} />
-          <Route path="/PaymentPage" element={<PaymentPage />} />
-          <Route path="/LoginForm" element={<LoginForm />} />
-          <Route path="/SignUpForm" element={<SignUpForm />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/UserPage" element={<UserHome />} />
-          <Route path="/CoinHistory" element={<CoinHistory />} />
-          <Route path="/DonationPage" element={<DonationHistory />} />
-          <Route path="/CreatePost" element={<CreatePost />} />
-          <Route path="/SearchPage" element={<SearchPage />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/HelpPage" element={<HelpPage />} />
-          <Route path="/AiPage" element={<AiPage />} />
-        </Routes>
-      </div>
+      <AuthProvider>
+        <div className="container">
+          <Routes>
+            <Route path="/LoginForm" element={<LoginForm />} />
+            <Route path="/SignUpForm" element={<SignUpForm />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/UserPage" element={<UserHome />} />
+            <Route path="/CoinHistory" element={<CoinHistory />} />
+            <Route path="/DonationPage" element={<DonationHistory />} />
+            <Route path="/CreatePost" element={<CreatePost />} />
+            <Route path="/SearchPage" element={<SearchPage />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/HelpPage" element={<HelpPage />} />
+            <Route path="/AiPage" element={<AiPage />} />
+            <Route path="/PaymentPage" element={<PaymentPage />} />
+            <Route path="/SettingPage" element={<SettingPage />} />
+          </Routes>
+        </div>
+      </AuthProvider>
     </Router>
   );
 }
