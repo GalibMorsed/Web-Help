@@ -38,8 +38,8 @@ const Login = () => {
           </p>
 
           <div className="log-image-container">
-            <img src="../../public/postImg.jpg" alt="Creative Thinking" />
-            <img src="../../public/postImg2.png" alt="Brainstorming Ideas" />
+            <img src="/public/postImg.jpg" alt="Creative Thinking" />
+            <img src="/public/postImg2.png" alt="Brainstorming Ideas" />
           </div>
         </div>
 

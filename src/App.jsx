@@ -17,6 +17,7 @@ import HelpPage from "./homeComponents/help";
 import AiPage from "./authPages/aiPage";
 import PaymentPage from "./homeComponents/paymentPage";
 import SettingPage from "./userPages/settingPage";
+import Withdrawl from "./userPages/withdrawl";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path="/AiPage" element={<AiPage />} />
             <Route path="/PaymentPage" element={<PaymentPage />} />
             <Route path="/SettingPage" element={<SettingPage />} />
+            <Route path="/Withdrawl" element={<Withdrawl />} />
           </Routes>
         </div>
       </AuthProvider>

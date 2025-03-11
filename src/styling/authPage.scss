@@ -65,6 +65,7 @@ $box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
     font-size: 2rem;
     font-weight: bold;
     color: $text-color;
+    padding-bottom: 2vh;
   }
 
   p {
@@ -81,6 +82,7 @@ $box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
     justify-content: center;
     gap: 1rem;
     width: 100%;
+    padding-top: 2vh;
 
     img {
       width: 40%;

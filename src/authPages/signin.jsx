@@ -78,8 +78,8 @@ const Signup = () => {
             and start shaping the future!
           </p>
           <div className="image-container">
-            <img src="../../public/postImg2.png" alt="Join Community" />
-            <img src="../../public/postImg.jpg" alt="Creative Ideas" />
+            <img src="/public/postImg2.png" alt="Join Community" />
+            <img src="/public/postImg.jpg" alt="Creative Ideas" />
           </div>
         </div>
 

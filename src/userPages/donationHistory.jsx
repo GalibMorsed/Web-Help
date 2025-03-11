@@ -101,10 +101,10 @@ const DonationHistory = () => {
       </div>
       <footer className="footer">
         <div className="footer-left">
-          <Link to="/">Facing a problem? Contact Us | Help</Link>
+          <Link to="/HelpPage">Facing a problem? Contact Us | Help</Link>
         </div>
         <div className="footer-right">
-          <Link to="/">Want to withdraw money? Click here</Link>
+          <Link to="/Withdrawl">Want to withdraw money? Click here</Link>
         </div>
       </footer>
     </div>
